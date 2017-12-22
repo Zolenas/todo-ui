@@ -4,7 +4,6 @@ body {
     margin: 0;
     color: #212121;
     background-color: #fff;
-    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .left {
@@ -31,17 +30,13 @@ svg {
     background-color: #90CAF9 !important;
 }
 
-.hue2 {
-    background-color: #FFCC80 !important;
-}
-
 .hue.hovered:hover {
     color: #212121 !important;
     background-color: #BBDEFB !important;
 }
 
 .accent {
-    color: #fff;
+    color: #fff !important;
     background-color: #FFA726 !important;
 }
 
@@ -78,35 +73,6 @@ svg {
     animation-duration: 1s;
     animation-fill-mode: both;
     animation-name: slideInUp;
-}
-
-.colorChange:hover {
-    animation: colorchange 50s; /* animation-name followed by duration in seconds*/
-    /* you could also use milliseconds (ms) or something like 2.5s */
-    -webkit-animation: colorchange 50s; /* Chrome and Safari */
-}
-
-.rotate:hover {
-    animation: rotation 1.2s infinite linear;
-    -webkit-animation: rotation 1.2s infinite linear;
-}
-
-@keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
-}
-
-@-webkit-keyframes rotation {
-    from {
-        -webkit-transform: rotate(0deg);
-    }
-    to {
-        -webkit-transform: rotate(359deg);
-    }
 }
 
 @keyframes bounceInLeft {
@@ -216,7 +182,7 @@ input[type=checkbox] {
 }
 
 
-.item-checkbox {
+.item-actions .item-checkbox {
     position: relative;
     width: 60px; height: 60px; 
     background-color: #424242;
@@ -282,8 +248,3 @@ input[type=checkbox] {
     top: 4px; left: 6px;       
     /*opacity: 1;*/
 } 
-
-mat-dialog-container.mat-dialog-container {
-    position: fixed;
-    top:0; left:0; bottom:0; right:0;
-}

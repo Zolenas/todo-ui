@@ -1,7 +1,7 @@
 .item-container {
     height: 60px; line-height: 60px;
     margin: 18px 0px; padding: 20px 40px;
-    border: 2px solid #212121;
+    border: 1px solid #212121;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.4s;
@@ -10,7 +10,6 @@
 
 .item-container h1 {
     display: inline-block;
-    font-size: 26px;
 }
 
 .item-container .item-actions {
