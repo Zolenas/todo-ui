@@ -8,14 +8,17 @@ import { Task } from '../../models/task.model';
 })
 export class TaskItemComponent implements OnInit {
   @Input() task: Task;
+  link: string;
 
   constructor() {}
 
   ngOnInit() {
-
+    //this.link = 'task/'+this.task.id;
+    this.link = 'task/1';
   }
 
-  toggleStatus() {
+  toggleStatus(e) {
+    e.stopPropagation();
     let st = this.task.getStatus();
     this.task.setStatus(!st);
   }

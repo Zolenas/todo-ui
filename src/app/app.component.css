@@ -12,6 +12,7 @@ header mat-icon {
     border-radius: 30px;
     padding: 8px; margin-right: 10px;
     background-color: #eee;
+    cursor: pointer;
 }
 
 header h1 {

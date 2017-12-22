@@ -1,9 +1,9 @@
 <header>
-  <mat-icon svgIcon="up_or_down" class="logo primary bounceIn" aria-label="Logo"></mat-icon>
+  <mat-icon svgIcon="up_or_down" class="logo primary bounceIn" aria-label="Logo" (click)="goHome()"></mat-icon>
   <h1 class="bounceInRight">{{ title }}</h1>
   <task-menu></task-menu>
 </header>
 <section>
-  <task-list></task-list>
+  <router-outlet></router-outlet>
 </section>
 
