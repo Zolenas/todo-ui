@@ -2,6 +2,8 @@
 
 body {
     margin: 0;
+    color: #212121;
+    background-color: #fff;
 }
 
 .left {
@@ -15,21 +17,36 @@ body {
 
 /* Color theme */
 .primary {
-    color: mediumpurple;
-    background-color: mediumpurple;
+    color: #0091EA !important;
+    background-color: #0091EA !important;
 }
 
-.primary > svg {
-    fill: mediumpurple;
+svg {
+    fill: #0091EA !important;
+}
+
+.hue {
+    color: #212121;
+    background-color: #90CAF9 !important;
+}
+
+.hue.hovered:hover {
+    color: #212121 !important;
+    background-color: #BBDEFB !important;
 }
 
 .accent {
-    color: cornflowerblue;
-    background-color: cornflowerblue;
+    color: #fff !important;
+    background-color: #FFA726 !important;
 }
 
 .accent > svg {
-    fill: cornflowerblue
+    fill: #FFA726  !important;
+}
+
+.accent.hovered:hover {
+    color: #212121 !important;
+    background-color: #FFCC80 !important;
 }
 
 
@@ -168,11 +185,15 @@ input[type=checkbox] {
 .item-actions .item-checkbox {
     position: relative;
     width: 60px; height: 60px; 
-    background-color: #45484d;
+    background-color: #424242;
     margin: 0px 20px;
     -webkit-border-radius: 30px;
     border-radius: 30px;
     /*box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+
+.item-checkbox {
+    position: relative;
 }
 
 .item-checkbox span {

@@ -1,8 +1,8 @@
 <div class="menu-container">
-  <button mat-icon-button matTooltip="Remove finished" matTooltipPosition="below">
+  <button mat-icon-button matTooltip="Remove finished" matTooltipPosition="below" (click)="removeTasks()">
     <mat-icon class="menu-icon" svgIcon="delete" aria-label="Remove finished"></mat-icon>
   </button>
-  <button mat-icon-button matTooltip="Add new todo" matTooltipPosition="below">
+  <button mat-icon-button matTooltip="Add new todo" matTooltipPosition="below" (click)="createTask()">
     <mat-icon class="menu-icon" svgIcon="add" aria-label="Add new todo"></mat-icon>
   </button>
 </div>

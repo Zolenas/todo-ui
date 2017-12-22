@@ -8,6 +8,12 @@
 .menu-container button {
     width: 70px; height: 70px;
     margin-left: 16px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+.menu-container button:hover {
+    background-color: #E3F2FD !important;
 }
 
 .item-actions button, .menu-icon {

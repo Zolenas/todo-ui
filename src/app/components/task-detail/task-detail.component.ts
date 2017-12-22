@@ -17,10 +17,22 @@ export class TaskDetailComponent implements OnInit {
       /*taskService.getTask(res.id).subscribe(t => 
         this.task = t
       )*/
-      this.task = new Task("Test ::: "+res.id, true ,"blablabla")
+      this.task = new Task("id1", "Test ::: "+res.id, true ,"blablabla")
     );
   }
 
   ngOnInit() {
+  }
+
+  // Set task status and persist it
+  toggleStatus(e) {
+    e.stopPropagation();
+    let st = this.task.getStatus();
+    let id = this.task.getId();
+    this.task.setStatus(!st);
+    /* Fixme
+    setStatus SHOULD be done after the service response !
+    */
+    this.taskService.modifyTask(id, this.task);
   }
 }

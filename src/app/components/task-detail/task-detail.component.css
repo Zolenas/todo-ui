@@ -1,0 +1,19 @@
+.detail-container {
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    margin: 20px;
+}
+
+.detail-container mat-card-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.detail-container mat-card-content {
+    font-size: 24px; 
+}
+
+.detail-container mat-card-actions {
+    position: absolute;
+    right:100px; bottom:100px; 
+}
