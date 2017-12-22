@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>
+    {{task.title}}
+  </mat-card-title>
+  <mat-card-content>
+    {{task.description}}
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <div class="item-checkbox">
+      <input type="checkbox" name="done" [(ngModel)]="task.status">
+      <span></span>
+    </div>
+  </mat-card-actions>
+</mat-card>
