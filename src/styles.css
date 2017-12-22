@@ -1,1 +1,229 @@
-/* You can add global styles to this file, and also import other style files */
+/*@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";*/
+
+body {
+    margin: 0;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+/* Color theme */
+.primary {
+    color: mediumpurple;
+    background-color: mediumpurple;
+}
+
+.primary > svg {
+    fill: mediumpurple;
+}
+
+.accent {
+    color: cornflowerblue;
+    background-color: cornflowerblue;
+}
+
+.accent > svg {
+    fill: cornflowerblue
+}
+
+
+/* Animation */
+.bounceIn {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: bounceIn;
+}
+
+.bounceInLeft {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: bounceInLeft;
+}
+
+.bounceInRight {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: bounceInRight;
+}
+
+.slideInUp {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: slideInUp;
+}
+
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+/* Checkbox */
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+
+.item-actions .item-checkbox {
+    position: relative;
+    width: 60px; height: 60px; 
+    background-color: #45484d;
+    margin: 0px 20px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    /*box-shadow: 0px 1px 3px rgba(0,0,0,0.5);*/
+}
+
+.item-checkbox span {
+    position: absolute;
+    display: block;
+    width: 56px; height: 56px;
+    border-radius: 28px;
+    left: 2px; top: 2px;
+    background-color: #fff;
+} 
+
+/*.item-checkbox span:after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    width: 30px; height: 20px;
+    background-color: transparent;
+    top: 9px; left: 8px;
+    border: 8px solid #333;
+    border-top: none; border-right: none;
+    transform: rotate(-45deg);
+    transition: opacity 0.2s;
+    -webkit-transition: opacity 0.2s;
+}*/
+
+.item-checkbox span:after {
+    content: '';
+    position: absolute;
+    opacity: 1;
+    top: 8px; left: 4px;
+    width: 45px; height: 45px;
+    background-image: url('./assets/icons/thumb_down.svg');
+    background-size: 45px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+
+.item-checkbox input[type=checkbox]:checked + span:hover::after {
+    transform: none;
+    top: 8px; left: 4px;
+    opacity: 0.5;
+} 
+
+.item-checkbox span:hover::after {   
+    transform: rotate(-180deg); 
+    top: 4px; left: 6px;          
+    opacity: 0.5;
+} 
+
+.item-checkbox input[type=checkbox]:checked + span:after {
+    transform: rotate(-180deg); 
+    top: 4px; left: 6px;       
+    /*opacity: 1;*/
+} 

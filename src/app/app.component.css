@@ -1,0 +1,36 @@
+header {
+    position: absolute;
+    top:0px; left:0px; right:0px;
+    height: 70px;
+    margin: 0; padding: 8px 20px;
+}
+
+header mat-icon {
+    float: left;
+    width: 40px; height: 40px;
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 8px; margin-right: 10px;
+    background-color: #eee;
+}
+
+header h1 {
+    float: left;
+    line-height: 60px;
+    text-transform: uppercase;
+    margin: 0; padding: 0;
+}
+
+header h1:first-child {
+    float: left;
+}
+
+header h1:last-child {
+    float: right;
+}
+
+section {
+    position: absolute;
+    top:68px; left:0; right:0; bottom:0;
+    padding: 10px 20px;
+}
