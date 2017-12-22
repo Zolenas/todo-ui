@@ -1,0 +1,24 @@
+.menu-container {
+    float: right;
+    height: 70px;
+    overflow: visible;
+    z-index: 1000;
+}
+
+.menu-container button {
+    width: 70px; height: 70px;
+    margin-left: 16px;
+}
+
+.item-actions button, .menu-icon {
+    width: 40px; height: 40px; 
+    margin: 0px 4px;
+}
+
+.menu-container button:first-child {
+    float: left;
+}
+
+.menu-container button:last-child {
+    float: right;
+}
