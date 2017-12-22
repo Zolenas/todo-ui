@@ -12,8 +12,7 @@ export class NewTaskDialogComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<NewTaskDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Task) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onNoClick(): void {
     this.dialogRef.close();

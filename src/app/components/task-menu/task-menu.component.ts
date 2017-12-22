@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { NewTaskDialogComponent } from '../new-task-dialog/new-task-dialog.component';
-import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/task.model';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'task-menu',

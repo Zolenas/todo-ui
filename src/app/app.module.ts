@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule, MatButtonModule, MatCardModule, MatIconRegistry, MatTooltipModule, MatDialogModule } from '@angular/material';
+import { MatIconModule, MatInputModule, MatButtonModule, MatCardModule, MatIconRegistry, MatTooltipModule, MatDialogModule, MatFormFieldModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,14 +29,18 @@ import { NewTaskDialogComponent } from './components/new-task-dialog/new-task-di
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatInputModule,
     MatButtonModule,
     MatCardModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule
   ],
   providers: [MatIconRegistry, TaskService],
+  entryComponents: [NewTaskDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

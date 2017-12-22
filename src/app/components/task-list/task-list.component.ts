@@ -18,7 +18,7 @@ export class TaskListComponent implements OnInit {
   }
 
   loadTasks() {
-    //this.tasks = [new Task("id1", "Test01", true ,"blablabla"), new Task("id2", "Test02"), new Task("id3", "Test03"), new Task("id4", "Test04")];
+    this.tasks = [new Task("id1", "Test01", true ,"blablabla"), new Task("id2", "Test02"), new Task("id3", "Test03"), new Task("id4", "Test04")];
     //this.taskService.getTasks().subscribe(t => this.tasks = t);
   }
 

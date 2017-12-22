@@ -80,12 +80,6 @@ svg {
     animation-name: slideInUp;
 }
 
-.colorChange:hover {
-    animation: colorchange 50s; /* animation-name followed by duration in seconds*/
-    /* you could also use milliseconds (ms) or something like 2.5s */
-    -webkit-animation: colorchange 50s; /* Chrome and Safari */
-}
-
 .rotate:hover {
     animation: rotation 1.2s infinite linear;
     -webkit-animation: rotation 1.2s infinite linear;

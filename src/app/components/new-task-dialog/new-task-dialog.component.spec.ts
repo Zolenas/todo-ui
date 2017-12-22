@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NewTaskDialogComponent } from './new-task-dialog.component';
 
 describe('NewTaskDialogComponent', () => {
