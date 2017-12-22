@@ -1,8 +1,8 @@
 .dialog-container {
     position: absolute;
-    width: 440px; min-height: 310px;
     top: 50%; left: 50%;
     margin-top: -155px; margin-left: -220px;
+    width: 440px; min-height: 310px;
     padding: 30px;
     border: 2px solid #fff;
     background-color: #212121;

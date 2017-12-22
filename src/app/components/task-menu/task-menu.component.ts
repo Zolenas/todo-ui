@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { NewTaskDialogComponent } from '../new-task-dialog/new-task-dialog.component';
+import { Task } from '../../models/task.model';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'task-menu',
@@ -7,20 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskMenuComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private taskService: TaskService) {}
 
   ngOnInit() {
   }
 
-  openDialog(): void {
-    let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+  createTask(): void {
+    let dialogRef = this.dialog.open(NewTaskDialogComponent, {
       width: '250px',
-      data: { name: this.name, animal: this.animal }
+      data: new Task("id5", "New task")
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
+      this.taskService.addTask(result);
     });
+  }
+  
+  removeTasks(): void {
+       
   }
 }
