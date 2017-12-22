@@ -1,0 +1,30 @@
+.dialog-container {
+    position: absolute;
+    width: 440px; min-height: 310px;
+    top: 50%; left: 50%;
+    margin-top: -155px; margin-left: -220px;
+    padding: 30px;
+    border: 2px solid #fff;
+    background-color: #212121;
+}
+
+.dialog-container h1 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.dialog-container p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.dialog-container mat-form-field {
+    font-size: 18px; width: 100%;
+    background-color: #eee;
+    padding: 4px; border-radius: 4px;
+}
+
+div[mat-dialog-content] {
+    height: 212px;
+    margin: 0;
+}
