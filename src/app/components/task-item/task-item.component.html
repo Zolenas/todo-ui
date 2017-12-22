@@ -1,0 +1,14 @@
+<mat-card class="item-container slideInUp" [class.finished]="task.status" (click)="toggleStatus()">
+  <h1>
+    {{task.title}}
+  </h1>
+  <div class="item-actions right">
+    <!--<button mat-icon-button color="primary">
+      <mat-icon svgIcon="add" class="item-icon" aria-label="Open details"></mat-icon>
+    </button>-->
+    <div class="item-checkbox">
+      <input type="checkbox" name="done" [(ngModel)]="task.status">
+      <span></span>
+    </div>
+  </div>
+</mat-card>
