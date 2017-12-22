@@ -1,0 +1,34 @@
+.item-container {
+    height: 60px; line-height: 60px;
+    margin: 10px 0px;
+    background-color: #eee;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+}
+
+.item-container:hover {
+    background-color: #fff;
+}
+
+.item-container h1 {
+    display: inline-block;
+}
+
+.item-container .item-actions {
+    line-height: 60px;
+}
+
+.item-container button:hover item-icon {
+    background-color: #fff;
+}
+
+.item-actions button, .item-icon {
+    width: 50px; height: 50px; 
+}
+
+.finished {
+    background-color: greenyellow;
+}
