@@ -9,7 +9,7 @@ export class TaskService {
   private tasks: Observable<[Task]>;
   constructor(private _htc:HttpClient) { }
 
-  /** 
+  /**
    * Post a new task
    * @param Task
    */
@@ -17,7 +17,7 @@ export class TaskService {
     this._htc.post("http://localhost:3001/todos", task);
   }
 
-  /** 
+  /**
    * Get task by id
    * @param string
    */
@@ -25,22 +25,22 @@ export class TaskService {
     return this._htc.get<Task>("http://localhost:3001/todos/"+id);
   }
 
-  /** 
+  /**
    * Get all tasks
    */
   getTasks():Observable<[Task]> {
     return this._htc.get<[Task]>("http://localhost:3001/todos");
   }
 
-  /** 
+  /**
    * Remove task by id
    * @param string
    */
-  removeTask(id: string) {
-    this._htc.delete("http://localhost:3000/todos/"+id);
+  removeTask(task: Task) {
+    this._htc.delete("http://localhost:3000/todos/"+task.getId());
   }
 
-  /** 
+  /**
    * Modify task by id
    * @param string
    * @param Task

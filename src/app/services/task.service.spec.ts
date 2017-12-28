@@ -47,7 +47,7 @@ describe('TaskService', () => {
     let tArray = [t1, t2];
 
     spy = spyOn(service, 'removeTask').and.returnValue(tArray.pop());
-    service.removeTask('id01');
+    service.removeTask(t1);
 
     expect(tArray.length).toBe(1);
   }));
