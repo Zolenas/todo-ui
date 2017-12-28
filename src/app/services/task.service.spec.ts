@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { Task } from '../models/task.model';
 
 describe('TaskService', () => {
+  let spy: any;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ HttpClientModule ],
@@ -26,19 +28,37 @@ describe('TaskService', () => {
   }));
 
   it('should get a task', inject([TaskService], (service: TaskService) => {
-    expect(service.getTask('id1')).toBeTruthy();
+    let t = new Task('id01', 'Task test', false, 'desc test');
+    spy = spyOn(service, 'getTask').and.returnValue(t);
+    expect(service.getTask('id01')).toBe(t);
   }));
 
   it('should return a list of task', inject([TaskService], (service: TaskService) => {
-    expect(service.getTasks()).toBeTruthy();
+    let t1 = new Task('id01', 'Task test', false, 'desc test');
+    let t2 = new Task('id02', 'Task test', false, 'desc test');
+    let tArray = [t1, t2];
+    spy = spyOn(service, 'getTasks').and.returnValue(tArray);
+    expect(service.getTasks()).toBe(tArray);
   }));
 
   it('should remove a task', inject([TaskService], (service: TaskService) => {
-    expect(service.removeTask('id1')).toBeTruthy();
+    let t1 = new Task('id01', 'Task test', false, 'desc test');
+    let t2 = new Task('id02', 'Task test', false, 'desc test');
+    let tArray = [t1, t2];
+
+    spy = spyOn(service, 'removeTask').and.returnValue(tArray.pop());
+    service.removeTask('id01');
+
+    expect(tArray.length).toBe(1);
   }));
 
   it('should modify a task', inject([TaskService], (service: TaskService) => {
-    let t = new Task('id2', 'Task 02', false, 'desc');
-    expect(service.modifyTask('id1', t )).toBeTruthy();
+    let t1 = new Task('id01', 'Task test', false, 'desc test');
+    let t2 = new Task('id02', 'Task test', false, 'desc test');
+
+    spy = spyOn(service, 'removeTask').and.returnValue(t1 = t2);
+    service.modifyTask('id01', t2 )
+
+    expect(t2).toBe(t1);
   }));
 });
