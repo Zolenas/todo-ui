@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Task } from '../../models/task.model';
-import { Router } from '@angular/router';  
+import { Router } from '@angular/router';
 import { TaskService } from '../../services/task.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { TaskService } from '../../services/task.service';
 export class TaskItemComponent implements OnInit {
   @Input() task: Task;
   //private link: string;
-  
+
   constructor(private router: Router, private taskService: TaskService) {}
 
   ngOnInit() {
@@ -29,6 +29,10 @@ export class TaskItemComponent implements OnInit {
     setStatus SHOULD be done after the service response !
     */
     this.taskService.modifyTask(id, this.task);
+  }
+
+  getStatus() {
+    return this.task.getStatus();
   }
 
   // Open detail view for this task item

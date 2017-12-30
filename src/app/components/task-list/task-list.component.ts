@@ -21,16 +21,4 @@ export class TaskListComponent implements OnInit {
     this.tasks = [new Task("id1", "Test01", true ,"blablabla"), new Task("id2", "Test02"), new Task("id3", "Test03"), new Task("id4", "Test04")];
     //this.taskService.getTasks().subscribe(t => this.tasks = t);
   }
-
-  addTask(task) {
-    //this.taskService.addTask(task).subscribe(t => this.tasks = t);
-  }
-
-  removeTask() {
-    //this.taskService.removeTask(id).subscribe(t => this.tasks = t);
-  }
-
-  openTask() {
-
-  }
 }

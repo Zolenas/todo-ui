@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';  
+import { ActivatedRoute } from '@angular/router';
 import { Task } from '../../models/task.model';
 import { TaskService } from '../../services/task.service';
 
@@ -9,12 +9,12 @@ import { TaskService } from '../../services/task.service';
   styleUrls: ['./task-detail.component.css']
 })
 export class TaskDetailComponent implements OnInit {
-  
+
   private task: Task;
 
   constructor(private route: ActivatedRoute, private taskService: TaskService) {
-    this.route.params.subscribe(res => 
-      /*taskService.getTask(res.id).subscribe(t => 
+    this.route.params.subscribe(res =>
+      /*taskService.getTask(res.id).subscribe(t =>
         this.task = t
       )*/
       this.task = new Task("id1", "Test ::: "+res.id, true ,"blablabla")
@@ -34,5 +34,9 @@ export class TaskDetailComponent implements OnInit {
     setStatus SHOULD be done after the service response !
     */
     this.taskService.modifyTask(id, this.task);
+  }
+
+  getStatus() {
+    return this.task.getStatus();
   }
 }
