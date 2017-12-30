@@ -9,16 +9,20 @@ import { Task } from '../../models/task.model';
 })
 export class TaskListComponent implements OnInit {
 
-  private tasks: Array<any>;
+  private tasks: Array<Task>;
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService) {
+  }
 
   ngOnInit() {
     this.loadTasks();
   }
 
   loadTasks() {
-    this.tasks = [new Task("id1", "Test01", true ,"blablabla"), new Task("id2", "Test02"), new Task("id3", "Test03"), new Task("id4", "Test04")];
-    //this.taskService.getTasks().subscribe(t => this.tasks = t);
+    this.taskService.getTasks()
+      .then(tasks => {
+        this.tasks = tasks;
+      });
   }
+
 }

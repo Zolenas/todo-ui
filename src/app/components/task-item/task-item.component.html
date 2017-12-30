@@ -1,6 +1,7 @@
 <mat-card class="item-container hue hovered slideInUp" (click)="openDetail()" [class.accent]="task.status">
   <h1>
     {{task.title}}
+    {{task.createdOn | date}}
   </h1>
   <div class="item-actions right">
     <!--<button mat-icon-button color="primary">

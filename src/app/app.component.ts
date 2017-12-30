@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
-import { Router } from '@angular/router';  
+import { Router } from '@angular/router';
+
+import { TaskListComponent } from './components/task-list/task-list.component';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  private activeComponent: any;
+
   title = 'Todo';
 
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private router: Router) {
@@ -16,8 +21,19 @@ export class AppComponent {
     iconRegistry.addSvgIcon('delete', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/delete_sweep.svg'));
     iconRegistry.addSvgIcon('add', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/add.svg'));
   }
-  
+
   goHome() {
     this.router.navigate(['']);
   }
+
+  onActivate(componentRef) {
+    this.activeComponent = componentRef;
+  }
+
+  private loadTasks(e: Event): void {
+    if (this.activeComponent instanceof TaskListComponent) {
+      this.activeComponent.loadTasks();
+    }
+  }
+
 }

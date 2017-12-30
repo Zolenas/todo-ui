@@ -14,11 +14,10 @@ export class TaskDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private taskService: TaskService) {
     this.route.params.subscribe(res =>
-      /*taskService.getTask(res.id).subscribe(t =>
-        this.task = t
-      )*/
-      this.task = new Task("id1", "Test ::: "+res.id, true ,"blablabla")
-    );
+      taskService.getTask(res.id)
+        .then(t => {
+          this.task = t;
+        }));
   }
 
   ngOnInit() {
@@ -27,13 +26,11 @@ export class TaskDetailComponent implements OnInit {
   // Set task status and persist it
   toggleStatus(e) {
     e.stopPropagation();
-    let st = this.task.getStatus();
-    let id = this.task.getId();
-    this.task.setStatus(!st);
-    /* Fixme
-    setStatus SHOULD be done after the service response !
-    */
-    this.taskService.modifyTask(id, this.task);
+    this.taskService.modifyTask(this.task)
+      .then(() => {
+        const st = this.task.getStatus();
+        this.task.setStatus(!st);
+      });
   }
 
   getStatus() {
