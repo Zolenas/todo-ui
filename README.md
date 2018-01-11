@@ -37,4 +37,4 @@ You can find the todo (front end) documentation on https://zolenas.github.io/tod
 
 ## Licence
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
