@@ -35,6 +35,6 @@ You can find the todo (front end) documentation on https://zolenas.github.io/tod
 
 * [**Frédéric Faure**](https://github.com/zolenas) <[zol.hen.as@gmail.com](mailto:zol.hen.as@gmail.com)> - Main developer
 
-## Licence
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
