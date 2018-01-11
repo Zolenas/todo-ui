@@ -1,0 +1,15 @@
+<mat-card class="detail-container hue" [class.accent]="task.status">
+  <mat-card-title>
+    {{task.title}}
+  </mat-card-title>
+  <span class="detail-date">{{task.createdOn | date:'medium'}}</span>
+  <mat-card-content class="hue2">
+    {{task.description}}
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="item-checkbox" matTooltip="{{task.status ? 'Uncheck' : 'Check'}}" [matTooltipPosition]="'right'" (click)="toggleStatus($event)">
+      <input type="checkbox" name="done" [(ngModel)]="task.status">
+      <span></span>
+    </div>
+  </mat-card-actions>
+</mat-card>
