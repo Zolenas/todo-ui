@@ -1,0 +1,50 @@
+version: '3'
+
+networks:
+  todo-mongodb:
+    driver: 'bridge'
+  todo-app:
+    driver: 'bridge'
+
+volumes:
+  todo-mongodb-data:
+
+services:
+  todo-mongodb:
+    image: 'tuba.tls.fr.astrium.corp:8446/mongo:3.6'
+    container_name: 'todo-mongodb'
+    restart: 'always'
+    volumes:
+      - 'todo-mongodb-data:/data/db:rw'
+    networks:
+      - 'todo-mongodb'
+
+  todo-server:
+    build: './todo-server'
+    image: 'zolenas/todo-server'
+    container_name: 'todo-server'
+    restart: 'always'
+    depends_on:
+      - 'todo-mongodb'
+    networks:
+      - 'todo-mongodb'
+      - 'todo-app'
+    environment:
+      MONGODB_HOST: 'todo-mongodb'
+      MONGODB_PORT: '27017'
+
+  todo-ui:
+    build: './todo-ui'
+    image: 'zolenas/todo-ui'
+    container_name: 'todo-ui'
+    restart: 'always'
+    depends_on:
+      - 'todo-server'
+    ports:
+      - '4200:4200'
+      - '20491:20491'
+    networks:
+      - 'todo-app'
+    environment:
+      TODO_SERVER_HOST: 'todo-server'
+      TODO_SERVER_PORT: '20491'
