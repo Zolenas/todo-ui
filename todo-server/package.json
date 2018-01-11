@@ -1,0 +1,61 @@
+{
+  "name": "todo-server",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Todo project - Node.js back-end using MongoDB & Express.js",
+  "homepage": "https://",
+  "bugs": {
+    "url": "https://"
+  },
+  "license": "MIT",
+  "author": "Frederic Faure <frederik.faure@gmail.com> (https://github.com/Zolenas)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zolenas/todo-server.git"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "build:w": "npm run build && gulp watch",
+    "clean": "gulp clean",
+    "start": "node ./dist/bin/www.js",
+    "start:w": "gulp serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "cors": "2.8.4",
+    "express": "4.16.2",
+    "moment": "2.20.1",
+    "mongodb": "2.2.33",
+    "morgan": "1.9.0",
+    "winston": "2.4.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "1.16.8",
+    "@types/cors": "2.8.3",
+    "@types/express": "4.11.0",
+    "@types/jest": "22.0.0",
+    "@types/mongodb": "2.2.18",
+    "@types/morgan": "1.7.35",
+    "@types/supertest": "2.0.4",
+    "@types/winston": "2.3.7",
+    "del": "3.0.0",
+    "gulp": "3.9.1",
+    "gulp-nodemon": "2.2.1",
+    "gulp-sourcemaps": "2.6.2",
+    "gulp-tslint": "8.1.2",
+    "gulp-typescript": "3.2.3",
+    "jest": "22.0.4",
+    "run-sequence": "2.2.0",
+    "supertest": "3.0.0",
+    "ts-jest": "22.0.0",
+    "ts-node": "4.1.0",
+    "tslint": "5.8.0",
+    "typescript": "2.6.2",
+    "vinyl-buffer": "1.0.1"
+  },
+  "engines": {
+    "node": ">=8.0"
+  }
+}
