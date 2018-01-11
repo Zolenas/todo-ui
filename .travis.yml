@@ -1,0 +1,13 @@
+sudo: 'required'
+
+language: 'bash'
+
+services:
+  - 'docker'
+
+install:
+  - './build.sh'
+
+script:
+  - cd todo-ui
+  - npm test
